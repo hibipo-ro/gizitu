@@ -1,0 +1,24 @@
+<h1>マイページ</h1>
+
+<% @strengths.each do |strength| %>
+<li>
+  得意
+  <%= link_to(strength.title, "/posts/#{strength.id}") %>
+</li>
+<% end %>
+
+<% @weaknesses.each do |weakness| %>
+<li>
+  苦手
+  <%= link_to(weakness.title, "/posts/#{weakness.id}") %>
+</li>
+<% end %>
+
+<% @normals.each do |normal| %>
+<li>
+  普通
+  <%= link_to(normal.title, "/posts/#{normal.id}") %>
+</li>
+<% end %>
+
+<%= link_to("一覧", "/") %>

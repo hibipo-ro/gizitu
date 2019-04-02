@@ -1,0 +1,11 @@
+<h1>詳細画面</h1>
+
+<%= link_to("一覧", "/") %>
+<%= link_to("編集", "/posts/#{@post.id}/edit") %>
+
+<input type="text" name="title" value="<%= @post.title %>">
+<input type="text" name="expect" value="<%= @post.expect %>">
+<input type="text" name="actual" value="<%= @post.actual %>">
+
+<%= link_to("得意","/posts/#{@post.id}/strength", {method: "post"}) %>
+<%= link_to("不得意","/posts/#{@post.id}/weakness", {method: "post"}) %>

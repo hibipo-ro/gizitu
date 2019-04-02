@@ -1,0 +1,10 @@
+<h1>新規投稿</h1>
+
+<%= link_to("一覧", "/") %>
+
+<%= form_tag("/posts/create") do %>
+  <input type="text" name="title" placeholder="タイトル">
+  <input type="text" name="expect" placeholder="期待する成果">
+  <input type="text" name="actual" placeholder="実際の成果">
+  <input type="submit" value="投稿">
+<% end %>
