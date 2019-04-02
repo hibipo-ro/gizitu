@@ -3,9 +3,27 @@
 <%= link_to("一覧", "/") %>
 <%= link_to("編集", "/posts/#{@post.id}/edit") %>
 
-<input type="text" name="title" value="<%= @post.title %>">
-<input type="text" name="expect" value="<%= @post.expect %>">
-<input type="text" name="actual" value="<%= @post.actual %>">
 
-<%= link_to("得意","/posts/#{@post.id}/strength", {method: "post"}) %>
-<%= link_to("不得意","/posts/#{@post.id}/weakness", {method: "post"}) %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">タイトル</th>
+      <th scope="col">期待する成果</th>
+      <th scope="col">実際の成果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @post.id %></th>
+      <td><%= @post.title %></td>
+      <td><%= @post.expect %></td>
+      <td><%= @post.actual %></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-center pt-5">
+  <div class="btn btn-lg btn-default mr-5"><%= link_to("不得意","/posts/#{@post.id}/weakness", {method: "post"}) %></div>
+  <div class="btn btn-lg btn-default ml-5"><%= link_to("得意","/posts/#{@post.id}/strength", {method: "post"}) %></div>
+</div>

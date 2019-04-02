@@ -1,14 +1,29 @@
 <h1>投稿一覧</h1>
-<% @posts.each do |post| %>
-<li>
-  <%= link_to(post.title, "/posts/#{post.id}") %>  
-  <%= post.expect %>  
-  <%= post.actual %>
-  <%= link_to("編集","/posts/#{post.id}/edit") %>
-  <%= link_to("削除","/posts/#{post.id}/destroy", {method: "post"}) %>
-</li>
+  
+  
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">タイトル</th>
+      <th scope="col">期待する成果</th>
+      <th scope="col">実際の成果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <th scope="row"><%= post.id %></th>
+      <td><%= link_to(post.title, "/posts/#{post.id}") %></td>
+      <td><%= post.expect %></td>
+      <td><%= post.actual %></td>
+      <td><%= link_to("編集", "/posts/#{post.id}/edit") %></td>
+      <td><%= link_to("削除", "/posts/#{post.id}/destroy") %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<% end %>
 
 
 <%= link_to("新規投稿", "/posts/new") %>
