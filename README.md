@@ -21,5 +21,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
+heroku  
+https://kizituapp.herokuapp.com/
+
 * ...
 # gizitu
