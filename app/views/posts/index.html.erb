@@ -1,11 +1,34 @@
 <h1>投稿一覧</h1>
-  
-  
+
+<%= search_form_for @q ,url: posts_path, class: 'mb-5' do |f| %>
+  <div class="form-group row">
+    <%= f.label :title_cont, '名称', class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= f.search_field :title_cont ,class: 'form_control' %>
+    </div>
+  </div>
+  <%# <div class="form-group row">
+    <%= f.label :created_at_gteq, '登録日時', class: 'col-sm-2 col-form-label' %>
+    <%# <div class="col-sm-10"> %>
+      <%# <%= f.search_field :created_at_gteq, class: 'form_control' %> 
+    <%# </div>
+  </div> %> 
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>
+
+<div class="mb-3">
+  <%= paginate @posts %>
+  <%= page_entries_info @posts %>
+</div>
+
+
 <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">タイトル</th>
+      <th scope="col"><%= sort_link(@q, :title) %></th>
       <th scope="col">期待する成果</th>
       <th scope="col">実際の成果</th>
     </tr>
@@ -18,7 +41,7 @@
       <td><%= post.expect %></td>
       <td><%= post.actual %></td>
       <td><%= link_to("編集", "/posts/#{post.id}/edit") %></td>
-      <td><%= link_to("削除", "/posts/#{post.id}/destroy") %></td>
+      <td><%= link_to("削除", "/posts/#{post.id}/destroy",{method: "post"}) %></td>
     </tr>
     <% end %>
   </tbody>
@@ -26,5 +49,5 @@
 
 
 
-<%= link_to("新規投稿", "/posts/new") %>
-<%= link_to("マイページ", "/posts/mypage") %>
+
+<div class="mb-5 ml-3"><%= link_to("新規投稿", "/posts/new") %><span class="ml-3"><%= link_to("マイページ", "/posts/mypage") %></span></div>
