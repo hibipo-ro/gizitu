@@ -1,25 +1,23 @@
-# README
+# フィードバック分析App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自分の得意なこと不得意なことを知れるようになりたいという思いから作りました。
 
-Things you may want to cover:
+# 使用した技術
 
-* Ruby version
++ 検索  
+  - ransack  
++ ページネーション  
+  - kaminari 
++ デザイン  
+  - bootstrap
+  
+# 機能  
 
-* System dependencies
+投稿する機能  
+得意、不得意のボタン  
+編集  
+削除  
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 heroku  
 https://kizituapp.herokuapp.com/
