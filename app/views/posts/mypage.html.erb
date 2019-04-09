@@ -8,14 +8,14 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">得意</th>
+      <th scope="col" class="bg-warning">得意</th>
     </tr>
   </thead>
   <tbody>
     <% @strengths.each do |strength| %>
     <tr>
       <th scope="row"><%= strength.id %></th>
-      <td><%= strength.title %></td>
+      <td><%= link_to(strength.title, "/posts/#{strength.id}") %></td>
     </tr>
     <% end %>
   </tbody>
@@ -27,14 +27,14 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">不得意</th>
+      <th scope="col" class="bg-light">不得意</th>
     </tr>
   </thead>
   <tbody>
     <% @weaknesses.each do |weakness| %>
     <tr>
       <th scope="row"><%= weakness.id %></th>
-      <td><%= weakness.title %></td>
+      <td><%= link_to(weakness.title, "/posts/#{weakness.id}") %></td>
     </tr>
     <% end %>
   </tbody>
@@ -46,14 +46,14 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">普通</th>
+      <th scope="col" class="bg-white">普通</th>
     </tr>
   </thead>
   <tbody>
     <% @normals.each do |normal| %>
     <tr>
       <th scope="row"><%= normal.id %></th>
-      <td><%= normal.title %></td>
+      <td><%= link_to(normal.title, "/posts/#{normal.id}") %></td>
     </tr>
     <% end %>
   </tbody>

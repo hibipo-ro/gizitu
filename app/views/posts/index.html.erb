@@ -1,5 +1,8 @@
 <h1>投稿一覧</h1>
 
+<div class="btn btn-outline-info"><%= link_to("新規投稿", "/posts/new") %></div>
+<div class="btn btn-outline-warning"><%= link_to("マイページ", "/posts/mypage") %></div>
+
 <%= search_form_for @q ,url: posts_path, class: 'mb-5' do |f| %>
   <div class="form-group row">
     <%= f.label :title_cont, '名称', class: 'col-sm-2 col-form-label' %>
@@ -29,8 +32,8 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col"><%= sort_link(@q, :title) %></th>
-      <th scope="col">期待する成果</th>
-      <th scope="col">実際の成果</th>
+      <th scope="col" class="text-success">期待する成果</th>
+      <th scope="col" class="text-secondary">実際の成果</th>
     </tr>
   </thead>
   <tbody>
@@ -50,4 +53,3 @@
 
 
 
-<div class="mb-5 ml-3"><%= link_to("新規投稿", "/posts/new") %><span class="ml-3"><%= link_to("マイページ", "/posts/mypage") %></span></div>
