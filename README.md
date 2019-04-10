@@ -1,5 +1,5 @@
 # フィードバック分析App
-https://kizituapp.herokuapp.com/  
+https://kizituapp.herokuapp.com/{:target="_blank"}    
 自分の得意なこと不得意なことを知れるようになりたいという思いから作りました。
 
 # 使用した技術
