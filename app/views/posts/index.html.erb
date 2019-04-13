@@ -2,8 +2,7 @@
 
 <div class="btn btn-outline-info"><%= link_to("新規投稿", "/posts/new") %></div>
 <div class="btn btn-outline-warning"><%= link_to("マイページ", "/posts/mypage") %></div>
-<div class="btn btn-outline-warning"><%= link_to("得意", "/posts/mypage") %></div>
-<div class="btn btn-outline-warning"><%= link_to("不得意", "/posts/mypage") %></div>
+
 
 <%= search_form_for @q ,url: posts_path, class: 'mb-5' do |f| %>
   <div class="form-group row">
