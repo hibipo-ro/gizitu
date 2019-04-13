@@ -19,7 +19,7 @@ class PostsController < ApplicationController
       actual: params[:actual],
       strength: 0)
     @post.save
-    redirect_to("/")
+    redirect_to posts_url
   end
 
   def edit
@@ -32,27 +32,28 @@ class PostsController < ApplicationController
     @post.expect= params[:expect]
     @post.actual= params[:actual]
     @post.save
-    redirect_to("/")
+    redirect_to posts_url
   end
 
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
-    redirect_to("/")
+    # head :no_content
+    # redirect_to posts_url
   end
 
   def strength
     @post = Post.find_by(id: params[:id])
     @post.strength = 1
     @post.save
-    redirect_to("/")
+    redirect_to posts_mypage_url
   end
   
   def weakness
     @post = Post.find_by(id: params[:id])
     @post.strength = 2
     @post.save
-    redirect_to("/")
+    redirect_to posts_mypage_url
   end
 
   def mypage
