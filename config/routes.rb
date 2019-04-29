@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "posts/:id/weakness" => "posts#weakness"
   root to: 'posts#index'
   get  "/signup"            => "users#new"
+  post  "/signup"            => "users#create"
   resources :posts
   resources :users
 end

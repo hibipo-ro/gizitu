@@ -14,7 +14,11 @@
       <header>
         <div class="btn btn-outline-warning"><%= link_to("ユーザー登録", signup_path ) %></div>
       </header>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
       <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
